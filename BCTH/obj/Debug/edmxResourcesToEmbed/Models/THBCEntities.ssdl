@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BCTHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Appendix">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Appendix_Report">
+    <Key>
+      <PropertyRef Name="AppendixId" />
+      <PropertyRef Name="ReportTypeId" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AppendixId" Type="int" Nullable="false" />
+    <Property Name="ReportTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MenuItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Url" Type="nvarchar" MaxLength="500" />
+    <Property Name="OrderIndex" Type="int" />
+    <Property Name="Icon" Type="varchar" MaxLength="200" />
+    <Property Name="ParentId" Type="int" />
+  </EntityType>
+  <EntityType Name="Report">
+    <Key>
+      <PropertyRef Name="ReportId" />
+    </Key>
+    <Property Name="ReportId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnitId" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="TypeId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="ReportColumn">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RowId" Type="int" Nullable="false" />
+    <Property Name="Value1" Type="money" />
+    <Property Name="Value2" Type="money" />
+    <Property Name="Value3" Type="money" />
+    <Property Name="Value4" Type="money" />
+    <Property Name="Value5" Type="money" />
+    <Property Name="Value6" Type="money" />
+    <Property Name="Value7" Type="money" />
+    <Property Name="Value8" Type="money" />
+    <Property Name="Value9" Type="money" />
+  </EntityType>
+  <EntityType Name="ReportRow">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReportId" Type="int" Nullable="false" />
+    <Property Name="Content" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Order" Type="int" />
+    <Property Name="Index" Type="varchar" MaxLength="5" />
+    <Property Name="Code" Type="int" />
+  </EntityType>
+  <EntityType Name="ReportType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="FormLink" Type="varchar" MaxLength="100" />
+    <Property Name="NumberRow" Type="int" />
+    <Property Name="NumberColumn" Type="int" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="UpdatedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Role_MenuItem">
+    <Key>
+      <PropertyRef Name="RoleId" />
+      <PropertyRef Name="MenuItemId" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="MenuItemId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="varchar" MaxLength="20" />
+    <Property Name="Mail" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="UpdatedDate" Type="date" />
+    <Property Name="CreatedByUserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="RoleId" Type="int" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Birthday" Type="date" />
+    <Property Name="Phone" Type="varchar" MaxLength="20" />
+    <Property Name="Mail" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="CMND" Type="varchar" MaxLength="100" />
+    <Property Name="Image" Type="varchar" MaxLength="200" />
+    <Property Name="IsAdmin" Type="bit" />
+    <Property Name="UnitId" Type="int" />
+  </EntityType>
+  <Association Name="FK_ReportRow">
+    <End Role="Report" Type="Self.Report" Multiplicity="1" />
+    <End Role="ReportRow" Type="Self.ReportRow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Report">
+        <PropertyRef Name="ReportId" />
+      </Principal>
+      <Dependent Role="ReportRow">
+        <PropertyRef Name="ReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportRowColumn">
+    <End Role="ReportRow" Type="Self.ReportRow" Multiplicity="1" />
+    <End Role="ReportColumn" Type="Self.ReportColumn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportRow">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReportColumn">
+        <PropertyRef Name="RowId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportType">
+    <End Role="ReportType" Type="Self.ReportType" Multiplicity="1" />
+    <End Role="Report" Type="Self.Report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Report">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UnitReport">
+    <End Role="Unit" Type="Self.Unit" Multiplicity="1" />
+    <End Role="Report" Type="Self.Report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Report">
+        <PropertyRef Name="UnitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BCTHModelStoreContainer">
+    <EntitySet Name="Appendix" EntityType="Self.Appendix" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Appendix_Report" EntityType="Self.Appendix_Report" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MenuItem" EntityType="Self.MenuItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Report" EntityType="Self.Report" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReportColumn" EntityType="Self.ReportColumn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReportRow" EntityType="Self.ReportRow" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReportType" EntityType="Self.ReportType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role_MenuItem" EntityType="Self.Role_MenuItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ReportRow" Association="Self.FK_ReportRow">
+      <End Role="Report" EntitySet="Report" />
+      <End Role="ReportRow" EntitySet="ReportRow" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportRowColumn" Association="Self.FK_ReportRowColumn">
+      <End Role="ReportRow" EntitySet="ReportRow" />
+      <End Role="ReportColumn" EntitySet="ReportColumn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportType" Association="Self.FK_ReportType">
+      <End Role="ReportType" EntitySet="ReportType" />
+      <End Role="Report" EntitySet="Report" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UnitReport" Association="Self.FK_UnitReport">
+      <End Role="Unit" EntitySet="Unit" />
+      <End Role="Report" EntitySet="Report" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

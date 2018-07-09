@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BCTHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Appendix">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Appendix_Report">
+    <Key>
+      <PropertyRef Name="AppendixId" />
+      <PropertyRef Name="ReportTypeId" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppendixId" Type="Int32" Nullable="false" />
+    <Property Name="ReportTypeId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MenuItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="OrderIndex" Type="Int32" />
+    <Property Name="Icon" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ParentId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Report">
+    <Key>
+      <PropertyRef Name="ReportId" />
+    </Key>
+    <Property Name="ReportId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UnitId" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TypeId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="ReportRows" Relationship="Self.FK_ReportRow" FromRole="Report" ToRole="ReportRow" />
+    <NavigationProperty Name="ReportType" Relationship="Self.FK_ReportType" FromRole="Report" ToRole="ReportType" />
+    <NavigationProperty Name="Unit" Relationship="Self.FK_UnitReport" FromRole="Report" ToRole="Unit" />
+  </EntityType>
+  <EntityType Name="ReportColumn">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowId" Type="Int32" Nullable="false" />
+    <Property Name="Value1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Value2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Value3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Value4" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Value5" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Value6" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Value7" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Value8" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Value9" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="ReportRow" Relationship="Self.FK_ReportRowColumn" FromRole="ReportColumn" ToRole="ReportRow" />
+  </EntityType>
+  <EntityType Name="ReportRow">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReportId" Type="Int32" Nullable="false" />
+    <Property Name="Content" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Order" Type="Int32" />
+    <Property Name="Index" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Code" Type="Int32" />
+    <NavigationProperty Name="Report" Relationship="Self.FK_ReportRow" FromRole="ReportRow" ToRole="Report" />
+    <NavigationProperty Name="ReportColumns" Relationship="Self.FK_ReportRowColumn" FromRole="ReportRow" ToRole="ReportColumn" />
+  </EntityType>
+  <EntityType Name="ReportType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FormLink" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NumberRow" Type="Int32" />
+    <Property Name="NumberColumn" Type="Int32" />
+    <NavigationProperty Name="Reports" Relationship="Self.FK_ReportType" FromRole="ReportType" ToRole="Report" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Role_MenuItem">
+    <Key>
+      <PropertyRef Name="RoleId" />
+      <PropertyRef Name="MenuItemId" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="MenuItemId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+    <Property Name="CreatedByUserId" Type="Int32" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="RoleId" Type="Int32" />
+    <NavigationProperty Name="Reports" Relationship="Self.FK_UnitReport" FromRole="Unit" ToRole="Report" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Birthday" Type="DateTime" Precision="0" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CMND" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsAdmin" Type="Boolean" />
+    <Property Name="UnitId" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_ReportRow">
+    <End Role="Report" Type="Self.Report" Multiplicity="1" />
+    <End Role="ReportRow" Type="Self.ReportRow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Report">
+        <PropertyRef Name="ReportId" />
+      </Principal>
+      <Dependent Role="ReportRow">
+        <PropertyRef Name="ReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportType">
+    <End Role="ReportType" Type="Self.ReportType" Multiplicity="1" />
+    <End Role="Report" Type="Self.Report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Report">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UnitReport">
+    <End Role="Unit" Type="Self.Unit" Multiplicity="1" />
+    <End Role="Report" Type="Self.Report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Report">
+        <PropertyRef Name="UnitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportRowColumn">
+    <End Role="ReportRow" Type="Self.ReportRow" Multiplicity="1" />
+    <End Role="ReportColumn" Type="Self.ReportColumn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportRow">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReportColumn">
+        <PropertyRef Name="RowId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BCTHEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Appendixes" EntityType="Self.Appendix" />
+    <EntitySet Name="Appendix_Report" EntityType="Self.Appendix_Report" />
+    <EntitySet Name="MenuItems" EntityType="Self.MenuItem" />
+    <EntitySet Name="Reports" EntityType="Self.Report" />
+    <EntitySet Name="ReportColumns" EntityType="Self.ReportColumn" />
+    <EntitySet Name="ReportRows" EntityType="Self.ReportRow" />
+    <EntitySet Name="ReportTypes" EntityType="Self.ReportType" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="Role_MenuItem" EntityType="Self.Role_MenuItem" />
+    <EntitySet Name="Units" EntityType="Self.Unit" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_ReportRow" Association="Self.FK_ReportRow">
+      <End Role="Report" EntitySet="Reports" />
+      <End Role="ReportRow" EntitySet="ReportRows" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportType" Association="Self.FK_ReportType">
+      <End Role="ReportType" EntitySet="ReportTypes" />
+      <End Role="Report" EntitySet="Reports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UnitReport" Association="Self.FK_UnitReport">
+      <End Role="Unit" EntitySet="Units" />
+      <End Role="Report" EntitySet="Reports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportRowColumn" Association="Self.FK_ReportRowColumn">
+      <End Role="ReportRow" EntitySet="ReportRows" />
+      <End Role="ReportColumn" EntitySet="ReportColumns" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ccdde103f5c5442f8844a2a47866a5bd" Name="Diagram1">
+        <EntityTypeShape EntityType="BCTHModel.Appendix" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCTHModel.Appendix_Report" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCTHModel.MenuItem" Width="1.5" PointX="6.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCTHModel.Report" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCTHModel.ReportColumn" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCTHModel.ReportRow" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCTHModel.ReportType" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCTHModel.Role" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCTHModel.Role_MenuItem" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCTHModel.Unit" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCTHModel.User" Width="1.5" PointX="8.625" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="BCTHModel.FK_ReportRow" ManuallyRouted="false" />
+        <AssociationConnector Association="BCTHModel.FK_ReportType" ManuallyRouted="false" />
+        <AssociationConnector Association="BCTHModel.FK_UnitReport" ManuallyRouted="false" />
+        <AssociationConnector Association="BCTHModel.FK_ReportRowColumn" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

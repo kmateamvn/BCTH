@@ -1,0 +1,513 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Hệ thống báo cáo tổng hợp</title>
+    <meta name="author" content="SuggeElson" />
+    <meta name="description" content="Supr admin template - new premium responsive admin template. This template is designed to help you build the site administration without losing valuable time.Template contains all the important functions which must have one backend system.Build on great twitter boostrap framework" />
+    <meta name="keywords" content="admin, admin template, admin theme, responsive, responsive admin, responsive admin template, responsive theme, themeforest, 960 grid system, grid, grid theme, liquid, masonry, jquery, administration, administration template, administration theme, mobile, touch , responsive layout, boostrap, twitter boostrap" />
+    <meta name="application-name" content="Supr admin template" />
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Force IE9 to render in normla mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Le styles -->
+    <!-- Use new way for google web fonts
+    http://www.smashingmagazine.com/2012/07/11/avoiding-faux-weights-styles-google-web-fonts -->
+    <!-- Headings -->
+    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css' />  -->
+    <!-- Text -->
+    <!-- <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' /> -->
+    <!--[if lt IE 9]>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!-- Core stylesheets do not remove -->
+    <link id="bootstrap" href="/Content/Temp/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/Temp/css/bootstrap/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/Temp/css/supr-theme/jquery.ui.supr.css" rel="stylesheet" type="text/css" />
+    @*<link href="/Content/Temp/css/jquery-ui.css" rel="stylesheet" type="text/css" />*@
+    <link href="/Content/Temp/css/icons.css" rel="stylesheet" type="text/css" />
+
+    <!-- Plugin stylesheets -->
+    <link href="/Content/Temp/plugins/misc/qtip/jquery.qtip.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/Temp/plugins/misc/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/Temp/plugins/misc/search/tipuesearch.css" type="text/css" rel="stylesheet" />
+    <link href="/Content/Temp/plugins/forms/uniform/uniform.default.css" type="text/css" rel="stylesheet" />
+    <link href="/Content/Temp/plugins/forms/togglebutton/toggle-buttons.css" type="text/css" rel="stylesheet" />
+
+    <!-- Main stylesheets -->
+    <link href="/Content/Temp/css/main.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom stylesheets ( Put your own changes here ) -->
+    <link href="/Content/Temp/css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/Temp/plugins/gallery/jpages/jPages.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/Temp/plugins/gallery/pretty-photo/prettyPhoto.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Content/checkbox/checkbox.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <!--[if IE 8]><link href="/Content/Temp/css/ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="/Content/Temp/js/libs/excanvas.min.js"></script>
+      <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script type="text/javascript" src="/Content/Temp/js/libs/respond.min.js"></script>
+    <![endif]-->
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/Content/Temp/images/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/Content/Temp/images/apple-touch-icon-144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Content/Temp/images/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Content/Temp/images/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="/Content/Temp/images/apple-touch-icon-57-precomposed.png" />
+
+    <!-- Windows8 touch icon ( http://www.buildmypinnedsite.com/ )-->
+    <meta name="application-name" content="Supr" />
+    <meta name="msapplication-TileColor" content="#3399cc" />
+
+    <!-- Load modernizr first -->
+    <script type="text/javascript" src="/Content/Temp/js/libs/modernizr.js"></script>
+</head>
+@{
+    var lstMenu = Session["lstMenu"] as List<BCTH.Models.MnuItem>;
+    if (lstMenu != null)
+    {
+        <body>
+            <div id="qLoverlay"></div>
+            <div id="qLbar"></div>
+
+            <div id="header" class="fixed">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/Home/">BCTH.<span class="slogan">BTC</span></a>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon16 icomoon-icon-arrow-4"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="/Home"><span class="icon16 icomoon-icon-screen-2"></span> <span class="txt">Bảng điều khiển</span></a>
+                            </li>
+                            <li class="dropdown" style="display:none;">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="icon16 icomoon-icon-cog"></span><span class="txt"> Cấu hình</span>
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="menu">
+                                        <ul>
+                                            <li><a href="#"><span class="icon16 icomoon-icon-equalizer"></span>Site config</a></li>
+                                            <li><a href="#"><span class="icon16 icomoon-icon-wrench"></span>Plugins</a></li>
+                                            <li><a href="#"><span class="icon16 icomoon-icon-image-2"></span>Themes</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            @*<li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <span class="icon16 icomoon-icon-envelop"></span><span class="txt">Thông báo xử lý</span><span class="notification">8</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="menu">
+                                            <ul class="messages">
+                                                <li class="header"><strong>Messages</strong> (10) emails and (2) PM</li>
+                                                <li>
+                                                    <span class="icon"><span class="icon16 icomoon-icon-user-plus"></span></span>
+                                                    <span class="name"><a data-toggle="modal" href="#myModal1"><strong>Sammy Morerira</strong></a><span class="time">35 min ago</span></span>
+                                                    <span class="msg">I have question about new function ...</span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon avatar"><img src="/Content/Temp/images/avatar.jpg" alt="" /></span>
+                                                    <span class="name"><a data-toggle="modal" href="#myModal1"><strong>George Michael</strong></a><span class="time">1 hour ago</span></span>
+                                                    <span class="msg">I need to meet you urgent please call me ...</span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon"><span class="icon16 icomoon-icon-envelop"></span></span>
+                                                    <span class="name"><a data-toggle="modal" href="#myModal1"><strong>Ivanovich</strong></a><span class="time">1 day ago</span></span>
+                                                    <span class="msg">I send you my suggestion, please look and ...</span>
+                                                </li>
+                                                <li class="view-all"><a href="#">View all messages <span class="icon16 icomoon-icon-arrow-right-8"></span></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>*@
+                        </ul>
+
+                        <ul class="nav navbar-right usernav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="icon16 icomoon-icon-bell red animate-flicker"></span>
+                                    @*<span class="notification animate-flicker" id="spanNewOrder">3</span>*@
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="menu">
+                                        <ul class="notif">
+                                            <li class="header"><strong>Thông báo</strong></li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="label label-danger event" id="spanNew1"><i class="icon16 icomoon-icon-new white animate-flicker"></i> Đơn hàng mới</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="label label-warning event" id="spanKT1"><i class="icon16 icomoon-icon-spinner-7 white animate-flicker"></i>Chuyển kế toán(0)</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="label label-info event" id="spanKho1"><i class="icon16 icomoon-icon-cart-plus white animate-flicker"></i>Chuyển xuống kho(0)</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="label label-primary event" id="spanGH1"><i class="icon16 icomoon-icon-cart-remove white animate-flicker"></i>Đang giao hàng(0)</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="label label-success event" id="spanHT1"><i class="icon16 icomoon-icon-cart-checkout white animate-flicker"></i>Hoàn thành(0)</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown">
+                                    <img src="/Content/Temp/images/avatar.jpg" alt="" class="image" />
+                                    <span class="txt">@Session["FullName"]</span>
+                                    <b class="caret"></b>
+                                </a>
+                                @*<ul class="dropdown-menu">
+                                        <li class="menu">
+                                            <ul>
+                                                <li><a href="#"><span class="icon16 icomoon-icon-user-plus"></span>Thông tin cá nhân</a></li>
+                                                <li><a href="#"><span class="icon16 icomoon-icon-bubble-2"></span>Approve comments</a></li>
+                                                <li><a href="#"><span class="icon16 icomoon-icon-plus"></span>Add user</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>*@
+                            </li>
+                            <li><a href="/Home/Login"><span class="icon16 icomoon-icon-exit"></span><span class="txt"> Đăng xuất</span></a></li>
+                        </ul>
+                    </div><!-- /.nav-collapse -->
+                </nav><!-- /navbar -->
+
+            </div>
+
+            <!-- End #header -------------------------------------------->
+
+            <div id="wrapper">
+
+                <!--Responsive navigation button-->
+                <div class="resBtn">
+                    <a href="#"><span class="icon16 minia-icon-list-3"></span></a>
+                </div>
+
+                <!--Sidebar collapse button-->
+                <div class="collapseBtn leftbar">
+                    <a href="#" class="tipR" title="Hide sidebar"><span class="icon12 minia-icon-layout"></span></a>
+                </div>
+
+                <!--Sidebar background-->
+                <div id="sidebarbg"></div>
+
+                <!--Sidebar content-->
+                <div id="sidebar">
+                    <div class="shortcuts">
+                        <ul>
+                            <li><a href="/AdminUserDV/Index" title="Quản lý người dùng, đơn vị" class="tip"><span class="icon24 icomoon-icon-support blue"></span></a></li>
+                            <li><a href="/ThongTinCaNhan/Index" title="Thông tin cá nhân" class="tip"><span class="icon24 icomoon-icon-upload-3 blue"></span></a></li>
+                            <li><a href="/BaoCao/Index" title="Báo cáo" class="tip"><span class="icon24 icomoon-icon-cart-plus blue"></span></a></li>
+                            <li><a href="/CauHinh/Index" title="Cấu hình hệ thống" class="tip"><span class="icon24 icomoon-icon-download-3 blue"></span></a></li>
+                            <!-- <li><a href="/SaoLuu/Index" title="Sao lưu" class="tip"><span class="icon24 icomoon-icon-upload-3 blue"></span></a></li> -->
+                        </ul>
+                    </div><!-- End search -->
+
+                    <div class="sidenav">
+
+                        <div class="sidebar-widget" style="margin: -1px 0 0 0;">
+                            <h5 class="title" style="margin-bottom:0">Menu</h5>
+                        </div><!-- End .sidenav-widget -->
+                        <div class="mainnav" style="margin-left:5px">
+                            <ul>
+                                @foreach (var item in lstMenu)
+                                {
+                                    if (item.ParentId == "0")
+                                    {
+                                        <li onclick="MenuClick(this)" menuname="@item.MenuName">
+                                            <a href="@item.Url" style="font-weight:bold"><span class="@item.Icon"></span>@item.MenuName</a>
+                                            <ul class="sub">
+                                                @foreach (var itemChild in lstMenu)
+                                                {
+                                                    if (itemChild.ParentId == item.Id)
+                                                    {
+                                                        <li menuname="@itemChild.MenuName" onclick="MenuClick(this)"><a href="@itemChild.Url"><span class="@itemChild.Icon"></span>@itemChild.MenuName</a></li>
+                                                    }
+                                                }
+                                            </ul>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+
+                    </div><!-- End sidenav -->
+                    <div class="sidebar-widget">
+                        <h5 class="title">Thông tin bổ sung 1</h5>
+                        <div class="content">
+                            <span class="icon16 icomoon-icon-loop left"></span>
+                            <div class="progress progress-mini left tip" title="87%">
+                                <div class="progress-bar progress-bar-danger" style="width: 87%;"></div>
+                            </div>
+                            <span class="percent">87%</span>
+                            <div class="stat">19419.94 / 12000 MB</div>
+                        </div>
+
+                    </div><!-- End .sidenav-widget -->
+
+                    <div class="sidebar-widget">
+                        <h5 class="title">Thông tin bổ sung 2</h5>
+                        <div class="content">
+                            <span class="icon16  icomoon-icon-storage-2 left"></span>
+                            <div class="progress progress-mini left tip" title="16%">
+                                <div class="progress-bar progress-bar-success" style="width: 16%;"></div>
+                            </div>
+                            <span class="percent">16%</span>
+                            <div class="stat">304.44 / 8000 MB</div>
+                        </div>
+
+                    </div>
+                    <!-- End .sidenav-widget ------------------>
+
+                    <div class="sidebar-widget">
+                        <h5 class="title">Thống kê</h5>
+                        <div class="content">
+
+                            <div class="stats">
+                                <div class="item">
+                                    <div class="head clearfix">
+                                        <div class="txt">Số lượt view</div>
+                                    </div>
+                                    <span class="icon16 icomoon-icon-eye left"></span>
+                                    <div class="number">21,501</div>
+                                    <div class="change">
+                                        <span class="icon24 icomoon-icon-arrow-up-2 green"></span>
+                                        5%
+                                    </div>
+                                    <span id="stat1" class="spark"></span>
+                                </div>
+                                <div class="item">
+                                    <div class="head clearfix">
+                                        <div class="txt">Số lần click</div>
+                                    </div>
+                                    <span class="icon16 icomoon-icon-thumbs-up left"></span>
+                                    <div class="number">308</div>
+                                    <div class="change">
+                                        <span class="icon24 icomoon-icon-arrow-down-2 red"></span>
+                                        8%
+                                    </div>
+                                    <span id="stat2" class="spark"></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div><!-- End .sidenav-widget -->
+                </div>
+                <!-- End #sidebar ---------------------------------------->
+                <!--Body content-->
+                <div id="content" class="clearfix">
+                    <div class="contentwrapper">
+                        <!--Content wrapper-->
+
+                        <div class="heading">
+
+                            <h3 id="h3Menu">@ViewBag.MenuName</h3>
+
+                            <div class="resBtnSearch">
+                                <a href="#"><span class="icon16 icomoon-icon-search-3"></span></a>
+                            </div>
+
+                            <div class="search">
+
+                                <form id="searchform" action="search.html">
+                                    <input type="text" id="tipue_search_input" class="top-search" placeholder="Tìm kiếm ..." />
+                                    <input type="submit" id="tipue_search_button" class="search-btn" value="" />
+                                </form>
+
+                            </div><!-- End search -->
+
+                            <ul class="breadcrumb">
+                                <li>You are here:</li>
+                                <li>
+                                    <a href="#" class="tip" title="back to dashboard">
+                                        <span class="icon16 icomoon-icon-screen-2"></span>
+                                    </a>
+                                    <span class="divider">
+                                        <span class="icon16 icomoon-icon-arrow-right-3"></span>
+                                    </span>
+                                </li>
+                                <li class="active">Fixed top bar</li>
+                            </ul>
+
+                        </div>
+
+                        <!-- End .heading-->
+                        <!-- Build page from here: -------------------------------->
+                        @RenderBody()
+                        <!--End page -->
+                        
+                    </div><!-- End contentwrapper -->
+
+                </div><!-- End #content -->
+
+            </div><!-- End #wrapper -->
+
+            <!-- Phan footer ------------------------------------------>           
+                <div>
+                    <hr width="100%">
+                    <h3>Thông tin bản quyền: ....</h3>
+                </div>
+                <!--------------------------------------------------------->
+
+                <!-- Le javascript
+        ================================================== -->
+                <!-- Important plugins put in all pages -->
+                @Scripts.Render("~/bundles/jquery")
+                <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+
+                <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+                <script type="text/javascript" src="/Content/Temp/js/bootstrap/bootstrap.js"></script>
+                <script type="text/javascript" src="/Content/Temp/js/jquery.mousewheel.js"></script>
+                <script type="text/javascript" src="/Content/Temp/js/libs/jRespond.min.js"></script>
+
+                <!-- Charts plugins -->
+                <script type="text/javascript" src="/Content/Temp/plugins/charts/sparkline/jquery.sparkline.min.js"></script><!-- Sparkline plugin -->
+                <!-- Charts plugins -->
+                <script type="text/javascript" src="/Content/Temp/plugins/charts/flot/jquery.flot.js"></script>
+                <script type="text/javascript" src="/Content/Temp/plugins/charts/flot/jquery.flot.grow.js"></script>
+                <script type="text/javascript" src="/Content/Temp/plugins/charts/flot/jquery.flot.pie.js"></script>
+                <script type="text/javascript" src="/Content/Temp/plugins/charts/flot/jquery.flot.resize.js"></script>
+                <script type="text/javascript" src="/Content/Temp/plugins/charts/flot/jquery.flot.tooltip_0.4.4.js"></script>
+                <script type="text/javascript" src="/Content/Temp/plugins/charts/flot/jquery.flot.orderBars.js"></script>
+                <script type="text/javascript" src="/Content/Temp/plugins/charts/sparkline/jquery.sparkline.min.js"></script><!-- Sparkline plugin -->
+                <script type="text/javascript" src="/Content/Temp/plugins/charts/knob/jquery.knob.js"></script><!-- Circular sliders and stats -->
+                <!-- Misc plugins -->
+                <script type="text/javascript" src="/Content/Temp/plugins/misc/fullcalendar/fullcalendar.min.js"></script><!-- Calendar plugin -->
+                <script type="text/javascript" src="/Content/Temp/plugins/misc/qtip/jquery.qtip.min.js"></script><!-- Custom tooltip plugin -->
+                <script type="text/javascript" src="/Content/Temp/plugins/misc/totop/jquery.ui.totop.min.js"></script>
+
+                <!-- Search plugin -->
+                <script type="text/javascript" src="/Content/Temp/plugins/misc/search/tipuesearch_set.js"></script>
+                <script type="text/javascript" src="/Content/Temp/plugins/misc/search/tipuesearch_data.js"></script><!-- JSON for searched results -->
+                <script type="text/javascript" src="/Content/Temp/plugins/misc/search/tipuesearch.js"></script>
+
+                <!-- Form plugins -->
+                <script type="text/javascript" src="/Content/Temp/plugins/forms/uniform/jquery.uniform.min.js"></script>
+                <script type="text/javascript" src="/Content/Temp/plugins/forms/togglebutton/jquery.toggle.buttons.js"></script>
+                <script type="text/javascript" src="/Content/Temp/plugins/forms/wizard/jquery.form.wizard.js"></script>
+                <!-- Charts plugins -->
+                <script type="text/javascript" src="/Content/Temp/plugins/charts/flot/jquery.flot.js"></script>
+                <script type="text/javascript" src="/Content/Temp/plugins/charts/flot/jquery.flot.grow.js"></script>
+                <script type="text/javascript" src="/Content/Temp/plugins/charts/flot/jquery.flot.pie.js"></script>
+                <script type="text/javascript" src="/Content/Temp/plugins/charts/flot/jquery.flot.resize.js"></script>
+                <script type="text/javascript" src="/Content/Temp/plugins/charts/flot/jquery.flot.tooltip_0.4.4.js"></script>
+                <script type="text/javascript" src="/Content/Temp/plugins/charts/flot/jquery.flot.orderBars.js"></script>
+                <script type="text/javascript" src="/Content/Temp/plugins/charts/sparkline/jquery.sparkline.min.js"></script><!-- Sparkline plugin -->
+                <script type="text/javascript" src="/Content/Temp/plugins/charts/knob/jquery.knob.js"></script><!-- Circular sliders and stats -->
+                <!-- Init plugins -->
+                <script type="text/javascript" src="/Content/Temp/js/main.js"></script><!-- Core js functions -->
+                <script type="text/javascript" src="/Content/Temp/js/empty.js"></script><!-- Init plugins only for page -->
+                <script type="text/javascript" src="/Content/Temp/plugins/gallery/lazy-load/jquery.lazyload.min.js"></script>
+                <script type="text/javascript" src="/Content/Temp/plugins/gallery/jpages/jPages.min.js"></script>
+                <script type="text/javascript" src="/Content/Temp/plugins/gallery/pretty-photo/jquery.prettyPhoto.js"></script>
+
+                <!-- bootstrap-daterangepicker -->
+                <script src="/Content/bootstrap-datetimepicker/build/js/moment.js"></script>
+                <script src="/Content/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+                <script src="/Scripts/jquery.formatCurrency-1.4.0.js"></script>
+                <script type="text/javascript" src="/Scripts/formatMoney.js"></script>
+
+                <script type="text/javascript">
+                    // document ready function
+                    $(document).ready(function () {
+                        //------------- Options for Supr - admin tempalte -------------//
+                        var supr_Options = {
+                            rtl: false//activate rtl version with true
+                        }
+                        //rtl version
+                        if (supr_Options.rtl) {
+                            localStorage.setItem('rtl', 1);
+                            $('#bootstrap').attr('href', '/Content/Temp/css/bootstrap/bootstrap.rtl.min.css');
+                            $('#bootstrap-responsive').attr('href', '/Content/Temp/css/bootstrap/bootstrap-responsive.rtl.min.css');
+                            $('body').addClass('rtl');
+                            $('#sidebar').attr('id', 'sidebar-right');
+                            $('#sidebarbg').attr('id', 'sidebarbg-right');
+                            $('.collapseBtn').addClass('rightbar').removeClass('leftbar');
+                            $('#content').attr('id', 'content-one')
+                        } else { localStorage.setItem('rtl', 0); }
+
+                        $("input, textarea").not('.nostyle').uniform();
+                    });
+                    function MenuClick(item) {
+                        var name = $(item).attr("menuName");
+                        $("#h3Menu").text(name);
+                    }
+                </script>
+                @Scripts.Render("~/Scripts/jquery.signalR-2.2.3.min.js")
+                @Scripts.Render("/signalr/hubs")
+                <script>
+                    $(function () {
+                        // Reference the hub.
+                        var hubNotif = $.connection.chatHub;
+
+                        // Start the connection.
+                        $.connection.hub.start().done(function () {
+                            getAll();
+                        });
+
+                        // Notify while anyChanges.
+                        hubNotif.client.updatedData = function () {
+                            getAll();
+                        };
+                    });
+
+                    function getAll() {
+                        $.ajax({
+                            type: "POST",
+                            url: "/Sale/GetNewOrder",
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            data: "{}",
+                            complete: function (data) {
+                                var arrData = data.responseJSON;
+                                console.log(arrData);
+                                $("#spanNewOrder").text(arrData[0]);
+                                var html = '<i class="icon16 icomoon-icon-new white animate-flicker"></i>';
+                                html += 'Đơn hàng mới(' + arrData[0] + ')';
+                                $("#spanNew1").html(html);
+                                $("#spanKT1").html('<i class="icon16 icomoon-icon-spinner-7 white animate-flicker"></i>Chuyển kế toán(' + arrData[1] + ')');
+                                $("#spanKho1").html('<i class="icon16 icomoon-icon-cart-plus white animate-flicker"></i>Chuyển xuống kho(' + arrData[2] + ')');
+                                $("#spanGH1").html('<i class="icon16 icomoon-icon-cart-remove white animate-flicker"></i>Đang giao hàng(' + arrData[3] + ')');
+                                $("#spanHT1").html('<i class="icon16 icomoon-icon-cart-checkout white animate-flicker"></i>Hoàn thành(' + arrData[4] + ')');
+                            }
+                        });
+                    }
+                </script>
+                <style>
+                </style>
+</body>
+    }
+}
+</html>

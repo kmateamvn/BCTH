@@ -1,0 +1,314 @@
+<!DOCTYPE>
+<html lang="en-US" class="no-js">
+<head>
+	<!--  taxigroup Page not found -->
+	<meta charset="UTF-8">
+	<title>TAXI GROUP</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="http://demo.taxigroup.com.vn/xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://demo.taxigroup.com.vn/wp-content/themes/taxigroup/js/html5.js"></script>
+	<![endif]-->
+	<link rel="shortcut icon" href="/wp-content/themes/taxigroup/favicon.ico?v=1.0">
+			<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/demo.taxigroup.com.vn\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.3.5"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='contact-form-7-css'  href='http://demo.taxigroup.com.vn/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-style-css'  href='http://demo.taxigroup.com.vn/wp-content/themes/taxigroup/css/bootstrap.min.css?ver=4.3.5' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-style-css'  href='http://demo.taxigroup.com.vn/wp-content/themes/taxigroup/css/font-awesome.min.css?ver=4.3.5' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery-ui-style-css'  href='http://demo.taxigroup.com.vn/wp-content/themes/taxigroup/css/jquery-ui.min.css?ver=4.3.5' type='text/css' media='all' />
+<link rel='stylesheet' id='font-questrial-css'  href='//fonts.googleapis.com/css?family=Questrial%3A400&#038;ver=4.3.5' type='text/css' media='all' />
+<link rel='stylesheet' id='royalcarride-style-css'  href='http://demo.taxigroup.com.vn/wp-content/themes/taxigroup/style.css?ver=4.3.5' type='text/css' media='all' />
+<script type='text/javascript' src='http://demo.taxigroup.com.vn/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='http://demo.taxigroup.com.vn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://demo.taxigroup.com.vn/wp-content/themes/taxigroup/js/modernizr.js?ver=4.3.5'></script>
+<script type='text/javascript' src='http://demo.taxigroup.com.vn/wp-content/themes/taxigroup/js/jquery-1.11.2.min.js?ver=4.3.5'></script>
+<script type='text/javascript' src='http://demo.taxigroup.com.vn/wp-content/themes/taxigroup/js/jquery-ui.min.js?ver=4.3.5'></script>
+<script type='text/javascript' src='http://demo.taxigroup.com.vn/wp-content/themes/taxigroup/js/bootstrap.min.js?ver=4.3.5'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://demo.taxigroup.com.vn/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://demo.taxigroup.com.vn/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.3.5" />
+</head>
+<body class="error404">
+<div id="wrapper">
+<section id='header'>
+            <span id='logo-menu'><i class="fa fa-bars"></i></span>
+            <a href='/'><img src='/wp-content/themes/taxigroup/img/logo.png'></a>
+            <span class='hidden-xs phone'>Hotline: 1900545467</span>
+        </section><section id="menu">
+            <a id="logo-menu2"><i class="fa fa-bars"></i></a>
+            <div class="drop-menu">
+                <ul>
+                    <li><a class="icon-menu-1" href="/">Trang chủ</a></li>
+                    <li><a class="icon-menu-2 " id='menu-hide' href="/#fare">Giá cước </a></li>
+                    <li><a href="/contact-page/" class="icon-menu-3">Tuyển dụng</a></li>
+                    <li><a class="icon-menu-4 QUpBookingButton">Đặt xe online</a></li>
+                    <li class='li-legal'>
+                        <a id="legal-menu" class="icon-menu-5">Pháp lý</a>
+                        <ul>
+                            <li class="lg"><a href="/terms-of-use/">Điều khoản sử dụng</a></li>
+                            <li class=" lg"><a href="/privacy-policy/">Chính sách bảo mật</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="icon-menu-6" href="/support/">Câu hỏi thường gặp</a></li>
+                    <li class='li-last1'><a class="icon-menu-7" href="/contact-page/">Liên hệ</a></li>
+                    <li class="li-last hidden-sm hidden-md hidden-lg">Hotline: 1900545467</li>
+                </ul>
+            </div>
+            <div id="click">
+            </div>
+        </section>
+					<section class="blog_content">
+			<div class="row">
+					</div>
+		</section>
+		
+<section id="footer">
+            <div id="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-12">
+                            <span>PHÁP LÝ</span>
+                            <a href="/terms-of-use">Điều khoản sử dụng</a></br>
+                            <a href="/privacy">Chính sách bảo mật</a></br>
+                        </div>
+                        <div class="col-sm-4 col-xs-12">
+                            <span>CÔNG TY</span>
+                            <a class='footer-border' href='contact-page'>Tuyển dụng</a><br class='br-hidden'>
+                            <a href="/contact-page">Liên hệ</a></br>
+                            <a href="/support">Câu hỏi thường gặp</a>
+                        </div>
+                        <div class="col-sm-4 col-xs-12">
+                            <span>TẢI ỨNG DỤNG TaxiGroup</span>
+                            <a target="_blank" class="remove-target-blank-on-touch" href="https://itunes.apple.com/us/app/taxi-group/id1036683614?mt=8">App store</a></br>
+                            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.qupworld.taxigroup">Google Play</a></br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer-bottom">
+                <span> &copy;2015 Bản quyền thuộc về TAXI GROUP</span>
+            </div>
+        </section><script type="text/javascript">// <![CDATA[
+(function(q,u,p,config){
+	config = {
+		server : 'http://www.cc.asaptaxi.qupworld.com',
+		fleet  : 'taxigroup',
+		button : '.QUpDriverSignup'
+	};
+	q=""+(new Date).getFullYear()+("0"+((new Date).getMonth()+1)).slice(-2)+("0"+(new Date).getDate()).slice(-2);
+	u=document.createElement("script");u.type="text/javascript";u.async=!0;u.src=(typeof config.script=='undefined'?"http://www.cc.qupworld.com/qupcc/resources/js/driver.signup.embedded.js":config.script)+"?v="+q;
+	window['QUpDs']=config;window['QUpMapInit']=function(){};p=document.getElementsByTagName("script")[0];p.parentNode.insertBefore(u,p);
+})();
+// ]]></script><script type="text/javascript">// <![CDATA[
+(function(q,u,p,config){
+	config = {
+		cssModify  : '#QUpBookingDate.invalid{background-color:#FCE4EC !important}#QUpBookingDate{background-color:#fff !important}#QUpBookingSummaryTable{margin-top:27px}#QUpBookingCarType td{border-bottom:#ddd solid 1px}#QUpBookingCarType tr:last-child td{border:0}.qup-submit-button,.qup-cancel-button,#QUpBookingResultClose{background-color:#181621;color:#fff !important}',
+		fleet      : 'taxigroup',
+		button     : '.QUpBookingButton',
+		cssMode    : 'file',    // OR inline
+		container  : false,// '#embedded-code',     // OR string: selector of container
+		mapOptions : {},
+		mapStyles  : [],
+		mapCenter  : '47.612657, -122.338035', // OR [lat, lng] OR {lat: ..., lng: ...}
+		mapZoom    : 10,
+		passenger  : [1, 4],    // or false
+		baggage    : [0, 4],    // or false
+		userLocation: {
+			autoDetech : true,
+			refreshTime: 0 		 // milisecond
+		}
+	};
+	q=""+(new Date).getFullYear()+("0"+((new Date).getMonth()+1)).slice(-2)+("0"+(new Date).getDate()).slice(-2);
+	u=document.createElement("script");u.type="text/javascript";u.async=!0;u.src=(typeof config.script=='undefined'?"https://wb-betavn.qupworld.com/script.js":config.script)+"?v="+q;
+	window['QUp']=config;window['QUpMapInit']=function(){};p=document.getElementsByTagName("script")[0];p.parentNode.insertBefore(u,p);
+})();
+// ]]></script></div>
+<script type='text/javascript' src='http://demo.taxigroup.com.vn/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/demo.taxigroup.com.vn\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://demo.taxigroup.com.vn/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.2'></script>
+<script type="text/javascript">
+    var findAnswerElements = function (question, handler) {
+        var child = question.next();
+        while (child.length != 0 && child.prop("tagName").toLowerCase() != 'h3' && child.prop("tagName").toLowerCase() != 'h2') {
+            handler(child);
+            child = child.next();
+        }
+    };
+
+    $(document).ready(function () {
+        /******************************************* SUPPORT *******************************************/
+        var h2s = jQuery('.display-h2-numbers h2');
+        for (var i = 0, l = h2s.length; i < l; i++)
+            jQuery(h2s[i]).addClass('h2-number').prepend('<span>' + (i + 1) + '</span>');
+
+        var h3 = $("#content-support h3");
+        h3.each(function () {
+            var question = $(this);
+            question.addClass("state-hide").prepend('<span></span>');
+            question.children().addClass(" fa fa-plus");
+            findAnswerElements(question, function (child) {
+                child.hide();
+            })
+        });
+
+        h3.click(function () {
+            var question = $(this);
+            var st = question.children();
+            if (question.hasClass('state-hide')) {
+                question.addClass('state-show').removeClass('state-hide');
+                findAnswerElements(question, function (child) {
+                    child.show();
+                    question.children().removeClass('fa-plus').addClass("fa-minus");
+                });
+            } else {
+                question.addClass('state-hide').removeClass('state-show');
+                findAnswerElements(question, function (child) {
+                    child.hide();
+                    question.children().removeClass('fa-minus').addClass("fa-plus");
+                });
+            }
+        });
+
+        /******************************************* HEADER *******************************************/
+        function header() {
+            var x = 130;
+            $(window).scroll(function () {
+                $("#header").stop(true);
+                if ($(this).scrollTop() < 130) {
+                    $("#header").animate({
+                        "top": "0"
+                    }, '0.1');
+                    x = $(this).scrollTop();
+                } else if ($(this).scrollTop() > x) {
+                    $("#header").animate({
+                        "top": "-130"
+                    }, "0.1");
+                    x = $(this).scrollTop();
+                } else {
+                    $("#header").animate({
+                        "top": "0"
+                    }, '0.1');
+                    x = $(this).scrollTop();
+                }
+            });
+        };
+        header();
+        /******************************************* MENU *******************************************/
+        $("#logo-menu").click(function () {
+            $("#menu").addClass("open");
+            $("#click").addClass("cl-open")
+        });
+        $("#logo-menu2").click(function (e) {
+            $("#menu").removeClass("open")
+        });
+        $("#click,#menu-hide").click(function (e) {
+            $("#menu").removeClass("open");
+            $("#click").removeClass("cl-open")
+        });
+        $("#legal-menu").click(function (e) {
+            $(".lg").toggle();
+        });
+		
+        /***********************************************FARE*****************************************/
+
+
+        var dataMap = {
+            eco: {
+                point: 80,
+                target: -7,
+                value: 'eco',
+                bgPosition: '0px 0px'
+            },
+            noi7: {
+                point: 240,
+                target: 165,
+                value: 'noi7',
+                bgPosition: '-70px 0px'
+            },
+            noi4: {
+                point: 406,
+                target: 333,
+                value: 'noi4',
+                bgPosition: '0px 0px'
+            },
+            fly4: {
+                point: 580,
+                target: 495,
+                value: 'fly4',
+                bgPosition: '0px 0px'
+            },
+            fly7: {
+                point: 1000,
+                target: 650,
+                value: 'fly7',
+                bgPosition: '-70px 0px'
+            },
+        };
+
+        var displayFare = function (data) {
+            $('#fare #car-type-switch span.display').animate({
+                left: data.target
+            }).css('background-position', data.bgPosition);
+            $('#fare .car-type-switch-text .active').removeClass('active');
+            $('#fare .car-show').attr("src", "img/" + data.value + ".png");
+            $('#fare .car-type-switch-text span.' + data.value).addClass('active');
+            $('#fare .car-type-data.active').removeClass('active').fadeOut(200);
+            $('#car-type-' + data.value).addClass('active').fadeIn(200);
+        };
+
+        $('#fare #car-type-switch span.display').draggable({
+            axis: "x",
+            containment: "parent",
+            stop: function (evt, ui) {
+                var position = ui.position.left;
+                for (var name in dataMap) {
+                    if (position < dataMap[name].point) {
+                        displayFare(dataMap[name]);
+                        break;
+                    }
+                }
+            }
+        });
+
+        $('#fare .car-type-switch-text span').click(function () {
+            var name = $(this).attr('assign');
+            displayFare(dataMap[name]);
+        });
+
+        $('#fare #car-type-switch .anchor').click(function () {
+            var name = $(this).attr('assign');
+            displayFare(dataMap[name]);
+        });
+        $('#car-type-select').change(function () {
+            var name = $(this).val();
+            displayFare(dataMap[name]);
+        }).change();
+
+
+        var html = $('html');
+        if (html.hasClass('touch')) {
+            $('.remove-target-blank-on-touch').removeAttr('target');
+        }
+    });
+</script>
